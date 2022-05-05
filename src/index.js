@@ -54,6 +54,12 @@ if (!gotTheLock) {
     tray.setContextMenu(
       Menu.buildFromTemplate([
         {
+          label: "Show",
+          click: () => {
+            mainWindow.show();
+          },
+        },
+        {
           label: "Exit",
           click: () => {
             if (process.platform !== "darwin") {
