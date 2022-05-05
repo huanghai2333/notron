@@ -1,0 +1,67 @@
+{
+  "name": "notron",
+  "productName": "Notron",
+  "version": "0.1.0",
+  "description": "Notion wrapped by Electron",
+  "main": "src/index.js",
+  "scripts": {
+    "start": "electron-forge start",
+    "package": "electron-forge package",
+    "make": "electron-forge make",
+    "publish": "electron-forge publish",
+    "lint": "echo \"No linting configured\""
+  },
+  "keywords": [
+    "Notion",
+    "Desktop",
+    "Linux",
+    "Windows"
+  ],
+  "homepage": "https://github.com/huanghai2333/notron",
+  "author": {
+    "name": "Hai Huang",
+    "email": "huanghai2333@outlook.com"
+  },
+  "repository": {
+    "type": "git",
+    "url": "github.com/huanghai2333/notron"
+  },
+  "license": "MIT",
+  "config": {
+    "forge": {
+      "packagerConfig": {
+        "executableName": "notron",
+        "icon": "./src/resources/icon"
+      },
+      "makers": [
+        {
+          "name": "@electron-forge/maker-squirrel",
+          "config": {
+            "name": "notron",
+            "setupIcon": "./src/resources/icon.ico"
+          }
+        },
+        {
+          "name": "@electron-forge/maker-deb",
+          "config": {
+            "options": {
+              "icon": "./src/resources/icon.png",
+              "categories": [
+                "Utility"
+              ]
+            }
+          }
+        }
+      ]
+    }
+  },
+  "dependencies": {
+    "electron-squirrel-startup": "^1.0.0"
+  },
+  "devDependencies": {
+    "@electron-forge/cli": "^6.0.0-beta.63",
+    "@electron-forge/maker-deb": "^6.0.0-beta.63",
+    "@electron-forge/maker-squirrel": "^6.0.0-beta.63",
+    "electron": "^17.4.2"
+  }
+}
